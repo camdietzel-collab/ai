@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culture thermal – 404 Culture Clothing (stand-in)</title>
+<link rel="stylesheet" href="/assets/store.css">
+</head>
+<body>
+<!-- STAND-IN: rebuilt from the store's product data; replace with a live capture -->
+<header class="header" id="site-header">
+  <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></span>
+  <a class="logo" href="/">404 CULTURE</a>
+  <span class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span>
+  <span class="icon" id="cart-icon"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count">1</span></span>
+</header>
+
+<main class="product">
+  <div class="media"><img src="/assets/img/culture-thermal.jpg" alt="Culture thermal"></div>
+  <div class="info">
+    <div class="vendor">404 Culture Clothing</div>
+    <h1>Culture thermal</h1>
+    <div class="price">$52.99 USD</div>
+    <form class="product-form" onsubmit="return false">
+      <fieldset>
+        <legend>Size</legend>
+        <div class="pills">
+          <input type="radio" name="Size" id="s-small" value="Small"><label for="s-small">Small</label>
+          <input type="radio" name="Size" id="s-m" value="M"><label for="s-m">M</label>
+          <input type="radio" name="Size" id="s-l" value="L"><label for="s-l">L</label>
+          <input type="radio" name="Size" id="s-xl" value="XL"><label for="s-xl">XL</label>
+          <input type="radio" name="Size" id="s-2xl" value="2XL"><label for="s-2xl">2XL</label>
+        </div>
+      </fieldset>
+      <button class="btn" type="submit" name="add">Add to cart</button>
+    </form>
+    <div class="desc"><p>Premade</p><p>100% cotton</p><p>3-5 day shipping</p></div>
+  </div>
+</main>
+
+<div class="drawer-scrim"></div>
+<aside class="cart-drawer" id="CartDrawer" aria-label="Your cart">
+  <div class="drawer-head"><h2>Your cart</h2><span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></div>
+  <div class="line-item">
+    <div class="thumb"><img src="/assets/img/culture-thermal.jpg" alt=""></div>
+    <div>
+      <h3>Culture thermal</h3>
+      <div class="meta">Size: <span id="picked-size">L</span></div>
+      <div class="price">$52.99</div>
+      <div class="qty"><span>&minus;</span><span>1</span><span>+</span></div>
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <div class="subtotal"><span>Subtotal</span><span>$52.99 USD</span></div>
+    <p class="small">Taxes and shipping calculated at checkout</p>
+    <button class="btn" type="button" name="checkout">Check out</button>
+  </div>
+</aside>
+
+<script>
+  document.querySelector('[name="add"]').addEventListener('click', () => {
+    const picked = document.querySelector('input[name="Size"]:checked');
+    if (picked) document.getElementById('picked-size').textContent = picked.value;
+    document.body.classList.add('drawer-open', 'has-items');
+  });
+</script>
+</body>
+</html>

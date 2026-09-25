@@ -1,0 +1,138 @@
+/* STAND-IN for 404cultureclothing.com (the live site is not reachable from the
+   build machine). Layout follows Shopify's default mobile theme conventions so
+   the same capture script works on the live store. */
+:root {
+  --ink: #121212;
+  --muted: #6b6b6b;
+  --line: #e4e4e4;
+  --tile: #f3f3f3;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: "Liberation Sans", Arial, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.4;
+}
+a { color: inherit; text-decoration: none; }
+
+.announcement {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .12em;
+  padding: 11px 12px;
+  text-transform: uppercase;
+}
+.header {
+  height: 58px;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px 44px;
+  align-items: center;
+  padding: 0 8px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.header .logo {
+  text-align: center;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: .14em;
+  padding-left: 44px;
+}
+.icon { width: 44px; height: 44px; display: grid; place-items: center; position: relative; }
+.icon svg { width: 22px; height: 22px; stroke: var(--ink); fill: none; stroke-width: 1.6; }
+.cart-count {
+  position: absolute; right: 7px; bottom: 7px;
+  min-width: 17px; height: 17px; border-radius: 9px;
+  background: var(--ink); color: #fff; font-size: 10px; font-weight: 700;
+  display: none; place-items: center;
+}
+.has-items .cart-count { display: grid; }
+
+.hero {
+  position: relative;
+  height: 430px;
+  background: #0f0f10 url(/assets/img/crewneck.jpg) center 42% / 118% auto no-repeat;
+  display: flex; align-items: flex-end;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.0) 35%, rgba(0,0,0,.72) 100%);
+}
+.hero .copy { position: relative; z-index: 1; padding: 0 20px 28px; color: #fff; }
+.hero h2 { font-size: 34px; letter-spacing: .02em; line-height: 1.05; margin-bottom: 14px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 46px; padding: 0 26px;
+  font-size: 15px; letter-spacing: .06em;
+  border: 1px solid var(--ink); background: var(--ink); color: #fff;
+}
+.hero .btn { background: #fff; color: var(--ink); border-color: #fff; }
+
+.section-title { font-size: 22px; padding: 30px 16px 16px; }
+.grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px 10px;
+  padding: 0 16px 28px;
+}
+.card .media { aspect-ratio: 1; background: var(--tile); overflow: hidden; }
+.card .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card h3 { font-size: 14px; font-weight: 400; margin-top: 9px; }
+.card .price { font-size: 15px; margin-top: 3px; }
+.view-all { padding: 4px 16px 36px; }
+.view-all .btn { width: 100%; background: #fff; color: var(--ink); }
+.footer { background: var(--tile); padding: 28px 16px 60px; color: var(--muted); font-size: 13px; }
+
+/* product page */
+.product .media { background: var(--tile); aspect-ratio: 1; }
+.product .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product .info { padding: 16px 16px 30px; }
+.vendor { font-size: 11px; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
+.product h1 { font-size: 28px; font-weight: 400; margin: 4px 0 6px; letter-spacing: .01em; }
+.product .price { font-size: 17px; margin-bottom: 14px; }
+fieldset { border: 0; margin-bottom: 16px; }
+legend { font-size: 13px; margin-bottom: 9px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills input { position: absolute; opacity: 0; pointer-events: none; }
+.pills label {
+  min-width: 50px; height: 38px; padding: 0 16px;
+  border: 1px solid var(--ink); border-radius: 20px;
+  display: grid; place-items: center; font-size: 14px;
+}
+.pills input:checked + label { background: var(--ink); color: #fff; }
+.product-form .btn { width: 100%; height: 50px; font-size: 15px; }
+.pressed { filter: brightness(.72); transform: scale(.985); }
+.desc { margin-top: 18px; font-size: 14px; color: #333; }
+.desc p { margin-bottom: 2px; }
+
+/* cart drawer */
+.drawer-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.42); opacity: 0; pointer-events: none; }
+.cart-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; width: 88%;
+  background: #fff; transform: translateX(100%);
+  display: flex; flex-direction: column;
+}
+.drawer-open .drawer-scrim { opacity: 1; }
+.drawer-open .cart-drawer { transform: none; }
+.drawer-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 18px 14px; border-bottom: 1px solid var(--line);
+}
+.drawer-head h2 { font-size: 22px; font-weight: 400; }
+.line-item { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 20px 18px; }
+.line-item .thumb { background: var(--tile); aspect-ratio: 1; }
+.line-item .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.line-item h3 { font-size: 15px; font-weight: 400; }
+.line-item .meta { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.line-item .price { margin-top: 6px; }
+.qty {
+  margin-top: 10px; display: inline-grid; grid-template-columns: 34px 34px 34px;
+  border: 1px solid var(--ink); height: 36px; align-items: center; text-align: center;
+}
+.drawer-foot { margin-top: auto; border-top: 1px solid var(--line); padding: 16px 18px 22px; }
+.subtotal { display: flex; justify-content: space-between; font-size: 16px; }
+.small { font-size: 12px; color: var(--muted); margin: 6px 0 14px; }
+.drawer-foot .btn { width: 100%; height: 50px; }

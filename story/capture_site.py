@@ -20,7 +20,7 @@ import threading
 
 from playwright.sync_api import sync_playwright
 
-from config import PRODUCT, SCREENS, HERE
+from config import PRODUCT, PRODUCTS, SCREENS, HERE
 
 VIEW_W, VIEW_H = 390, 714  # web area between the status bar and browser bar
 DPR = 3
@@ -28,7 +28,23 @@ UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.
       "(KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1")
 
 
+def build_standin_pages():
+    """Stand-in product pages for every listing, from the store's own data."""
+    tpl = open(os.path.join(HERE, "site", "product_template.html")).read()
+    for p in PRODUCTS.values():
+        pills = "\n".join(
+            f'          <input type="radio" name="Size" id="s-{v}" value="{v}"><label for="s-{v}">{v}</label>'
+            for v in p["sizes"])
+        html = tpl.format(title=p["title"], price=p["price"], img=p["site_img"], pills=pills,
+                          size=p["size"], copy="".join(f"<p>{c}</p>" for c in p["copy"]))
+        out = os.path.join(HERE, "site", "products", p["handle"])
+        os.makedirs(out, exist_ok=True)
+        with open(os.path.join(out, "index.html"), "w") as fh:
+            fh.write(html)
+
+
 def serve_standin():
+    build_standin_pages()
     class Quiet(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *a):
             pass

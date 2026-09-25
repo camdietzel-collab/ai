@@ -1,14 +1,20 @@
 # 404 CULTURE: "Order to outfit" (15s, 9:16)
 
-The buying journey in 15 seconds: a customer finds the **Culture thermal** on 404cultureclothing.com, picks size L and checks out. The order lands on the owner's phone, and the piece is pulled from stock, packed and labelled. It arrives, gets unboxed, and is worn outside. Close-up, then end card.
+The buying journey in 15 seconds: a customer finds a tiger league tee on 404cultureclothing.com, picks size L and checks out. The order lands on the owner's phone, and the piece is pulled from stock, packed and labelled. It arrives, gets unboxed, and is worn outside. Close-up, then end card.
 
-`404_culture_order_to_outfit_animatic_15s.mp4` is the current cut: 1080×1920, 30 fps, sound mixed to -14 LUFS.
+Current cuts (1080×1920, 30 fps, sound mixed to -14 LUFS), one per hero product:
+
+- `404_culture_order_to_outfit_baby_blue_animatic_15s.mp4`: **Baby blue tiger league**, $39.99
+- `404_culture_order_to_outfit_navy_animatic_15s.mp4`: **Navy tiger tee**, $39.99
+- `404_culture_order_to_outfit_thermal_animatic_15s.mp4`: **Culture thermal**, $52.99 (first version)
+
+Pick the product with `STORY_PRODUCT=baby_blue|navy|thermal` (default `baby_blue`) on `capture_site.py` and `assemble.py`.
 
 | Time | Shot | Status |
 |---|---|---|
 | 0.00–0.90 | A1 hand scrolling the site | **to film** (storyboard card) |
 | 0.90–4.00 | S1–S4 phone close-ups: tap product → size L → add to cart → tap Check out | rendered from a site capture (stand-in, see below) |
-| 4.00–5.00 | N1 owner's phone lights up: *New order · Culture thermal · Size L · $52.99*, on the drop | rendered, staged (no name, address or order number) |
+| 4.00–5.00 | N1 owner's phone lights up: *New order · <product> · Size L · <price>*, on the drop | rendered, staged (no name, address or order number) |
 | 5.00–9.00 | F1–F6 pull from stock, fold, mailer, seal, label | **to film** |
 | 9.00–12.00 | D1–D4 doorstep, open, pull it out, match cut to wearing it | **to film** |
 | 12.00–13.50 | W1 walking outside, thumbs-up | **to film** |
@@ -19,11 +25,13 @@ The shoot plan is in [SHOT_LIST.md](SHOT_LIST.md). A printable 4×6 staged label
 
 ## Product data
 
-Pulled from the connected Shopify store: **Culture thermal**, $52.99, sizes Small / M / L / XL / 2XL, "Premade / 100% cotton / 3-5 day shipping". It's the listing with real stock (122 units), which is why it's the hero. `config.py` assumes it's the black "Culture Never Dies" thermal (`campaign/source/1.webp`). If it's the cream one, change `PRODUCT["photo"]` and `PRODUCT["cutout"]`.
+Titles, prices, sizes (the store lists the tees as `s m l xl 2xl`) and the "Premade / 100% cotton / 3-5 day shipping" copy come from the connected Shopify store. Product photos are the uploaded ones in `campaign/source/`.
+
+**Stock check before this runs as an ad:** when this was built, Shopify showed 0 or negative inventory for every size of both tiger tees (oversold). The ad says "ready to ship", so restock or correct inventory first. Of these products, only Culture thermal showed stock (122 units).
 
 ## The website section
 
-The build machine can't reach `404cultureclothing.com` or `cdn.shopify.com`: the environment's network policy blocks them. So `site/` is a **stand-in** store page built from the real listing data and product photos, using standard Shopify mobile-theme layout. Once both domains are allowed in the environment's network settings:
+The build machine can't reach `404cultureclothing.com` or `cdn.shopify.com`: the environment's network policy blocks them. So `site/` is a **stand-in** store (`capture_site.py` generates a product page per listing from `site/product_template.html`), built from the real listing data and product photos, using standard Shopify mobile-theme layout. Once both domains are allowed in the environment's network settings:
 
 ```
 python3 capture_site.py --live   # real pages: collection, product, size L, add to cart

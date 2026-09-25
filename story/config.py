@@ -1,7 +1,7 @@
 """Single source of truth for the "order to outfit" 15s ad.
 
-Product data comes from the live Shopify store (404cultureclothing.com):
-"Culture thermal", $52.99, variants Small/M/L/XL/2XL, 122 units in stock.
+Product data is exactly as listed in the live Shopify store (404cultureclothing.com).
+Pick the hero with STORY_PRODUCT=baby_blue|navy|thermal (default baby_blue).
 """
 import os
 
@@ -17,27 +17,40 @@ FONT_BOLD = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
 FONT_REG = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 
 SITE_URL = "404cultureclothing.com"
+SRC = os.path.join(ROOT, "campaign")
+TEE_COPY = ["Premade", "100% cotton", "3-5 day shipping"]
 
-# Hero product. Title, price, sizes and copy are exactly as listed in the store.
-PRODUCT = {
-    "title": "Culture thermal",
-    "handle": "culture-thermal",
-    "vendor": "404 Culture Clothing",
-    "price": "$52.99",
-    "sizes": ["Small", "M", "L", "XL", "2XL"],
-    "size": "L",
-    "copy": ["Premade", "100% cotton", "3-5 day shipping"],
-    # ASSUMPTION: the "Culture thermal" listing is the black "Culture Never Dies"
-    # thermal. If it is the cream one, point these at campaign/source/3.webp.
-    "photo": os.path.join(ROOT, "campaign", "source", "1.webp"),
-    "cutout": os.path.join(ROOT, "campaign", "cutouts", "1.png"),
-    # focus point of the chest graphic, normalised in the cutout
-    "graphic_focus": (0.49, 0.40),
+PRODUCTS = {
+    "baby_blue": {
+        "title": "Baby blue tiger league", "handle": "preorder", "price": "$39.99",
+        "sizes": ["s", "m", "l", "xl", "2xl"], "size": "l", "noun": "tee", "copy": TEE_COPY,
+        "site_img": "baby-blue-tiger-league.jpg",
+        "photo": os.path.join(SRC, "source", "4.webp"), "cutout": os.path.join(SRC, "cutouts", "4.png"),
+        "graphic_focus": (0.50, 0.46),
+    },
+    "navy": {
+        "title": "Navy tiger tee", "handle": "nacy-tiger-tee", "price": "$39.99",
+        "sizes": ["s", "m", "l", "xl", "2xl"], "size": "l", "noun": "tee", "copy": TEE_COPY,
+        "site_img": "navy-tiger-tee.jpg",
+        "photo": os.path.join(SRC, "source", "5.webp"), "cutout": os.path.join(SRC, "cutouts", "5.png"),
+        "graphic_focus": (0.50, 0.46),
+    },
+    # ASSUMPTION: the "Culture thermal" listing is the black "Culture Never Dies" thermal.
+    "thermal": {
+        "title": "Culture thermal", "handle": "culture-thermal", "price": "$52.99",
+        "sizes": ["Small", "M", "L", "XL", "2XL"], "size": "L", "noun": "thermal", "copy": TEE_COPY,
+        "site_img": "culture-thermal.jpg",
+        "photo": os.path.join(SRC, "source", "1.webp"), "cutout": os.path.join(SRC, "cutouts", "1.png"),
+        "graphic_focus": (0.49, 0.40),
+    },
 }
+KEY = os.environ.get("STORY_PRODUCT", "baby_blue")
+PRODUCT = dict(PRODUCTS[KEY], vendor="404 Culture Clothing")
+NOUN = PRODUCT["noun"]
 
 NOTIFICATION = {
     "title": "New order",
-    "body": f"{PRODUCT['title']} · Size {PRODUCT['size']} · {PRODUCT['price']}",
+    "body": f"{PRODUCT['title']} · Size {PRODUCT['size'].upper()} · {PRODUCT['price']}",
     "time": "4:04",
 }
 
@@ -59,8 +72,8 @@ SHOTS = [
     dict(code="S4", t0=3.20, t1=4.00, kind="screen", beat="checkout"),
     dict(code="N1", t0=4.00, t1=5.00, kind="notify"),
     dict(code="F1", t0=5.00, t1=5.75, kind="film", title="PULL FROM STOCK",
-         action="Hand pulls one thermal off the stack",
-         frame="Stack of the same thermals in frame", ref="stack"),
+         action=f"Hand pulls one {NOUN} off the stack",
+         frame=f"Stack of the same {NOUN}s in frame", ref="stack"),
     dict(code="F2", t0=5.75, t1=6.50, kind="film", title="FOLD",
          action="Lay it flat, fold the sleeves in",
          frame="Top-down on the table", ref="flatlay"),
@@ -68,7 +81,7 @@ SHOTS = [
          action="Fold in half, graphic side up",
          frame="Same top-down position as F2", ref="flatlay"),
     dict(code="F4", t0=7.00, t1=7.50, kind="film", title="INTO THE MAILER",
-         action="Slide the folded thermal into the mailer",
+         action=f"Slide the folded {NOUN} into the mailer",
          frame="Close, 45° from above"),
     dict(code="F5", t0=7.50, t1=8.25, kind="film", title="SEAL",
          action="Peel the strip, press it shut",
@@ -83,7 +96,7 @@ SHOTS = [
          action="Tear the mailer open",
          frame="Close on hands"),
     dict(code="D3", t0=10.50, t1=11.25, kind="film", title="PULL IT OUT",
-         action="Lift the thermal up to the lens",
+         action=f"Lift the {NOUN} up to the lens",
          frame="End with the graphic filling the frame", ref="graphic"),
     dict(code="D4", t0=11.25, t1=12.00, kind="film", title="WEARING IT",
          action="Same framing, now worn; pull back",
@@ -108,7 +121,7 @@ NOTIFY_IN = 4.07
 # settings in footage/edit.json, e.g. {"F2": {"in": 1.2, "speed": 0.8}}
 FOOTAGE_DIR = os.environ.get("STORY_FOOTAGE", os.path.join(HERE, "footage"))
 BUILD = os.path.join(HERE, "build")
-SCREENS = os.path.join(BUILD, "screens")
+SCREENS = os.path.join(BUILD, KEY, "screens")
 
 
 def frame_of(t):

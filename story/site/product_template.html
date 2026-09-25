@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Culture thermal – 404 Culture Clothing (stand-in)</title>
+<title>{title} – 404 Culture Clothing (stand-in)</title>
 <link rel="stylesheet" href="/assets/store.css">
 </head>
 <body>
@@ -16,25 +16,21 @@
 </header>
 
 <main class="product">
-  <div class="media"><img src="/assets/img/culture-thermal.jpg" alt="Culture thermal"></div>
+  <div class="media"><img src="/assets/img/{img}" alt="{title}"></div>
   <div class="info">
     <div class="vendor">404 Culture Clothing</div>
-    <h1>Culture thermal</h1>
-    <div class="price">$52.99 USD</div>
+    <h1>{title}</h1>
+    <div class="price">{price} USD</div>
     <form class="product-form" onsubmit="return false">
       <fieldset>
         <legend>Size</legend>
         <div class="pills">
-          <input type="radio" name="Size" id="s-Small" value="Small"><label for="s-Small">Small</label>
-          <input type="radio" name="Size" id="s-M" value="M"><label for="s-M">M</label>
-          <input type="radio" name="Size" id="s-L" value="L"><label for="s-L">L</label>
-          <input type="radio" name="Size" id="s-XL" value="XL"><label for="s-XL">XL</label>
-          <input type="radio" name="Size" id="s-2XL" value="2XL"><label for="s-2XL">2XL</label>
+{pills}
         </div>
       </fieldset>
       <button class="btn" type="submit" name="add">Add to cart</button>
     </form>
-    <div class="desc"><p>Premade</p><p>100% cotton</p><p>3-5 day shipping</p></div>
+    <div class="desc">{copy}</div>
   </div>
 </main>
 
@@ -42,27 +38,27 @@
 <aside class="cart-drawer" id="CartDrawer" aria-label="Your cart">
   <div class="drawer-head"><h2>Your cart</h2><span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></div>
   <div class="line-item">
-    <div class="thumb"><img src="/assets/img/culture-thermal.jpg" alt=""></div>
+    <div class="thumb"><img src="/assets/img/{img}" alt=""></div>
     <div>
-      <h3>Culture thermal</h3>
-      <div class="meta">Size: <span id="picked-size">L</span></div>
-      <div class="price">$52.99</div>
+      <h3>{title}</h3>
+      <div class="meta">Size: <span id="picked-size">{size}</span></div>
+      <div class="price">{price}</div>
       <div class="qty"><span>&minus;</span><span>1</span><span>+</span></div>
     </div>
   </div>
   <div class="drawer-foot">
-    <div class="subtotal"><span>Subtotal</span><span>$52.99 USD</span></div>
+    <div class="subtotal"><span>Subtotal</span><span>{price} USD</span></div>
     <p class="small">Taxes and shipping calculated at checkout</p>
     <button class="btn" type="button" name="checkout">Check out</button>
   </div>
 </aside>
 
 <script>
-  document.querySelector('[name="add"]').addEventListener('click', () => {
+  document.querySelector('[name="add"]').addEventListener('click', () => {{
     const picked = document.querySelector('input[name="Size"]:checked');
     if (picked) document.getElementById('picked-size').textContent = picked.value;
     document.body.classList.add('drawer-open', 'has-items');
-  });
+  }});
 </script>
 </body>
 </html>

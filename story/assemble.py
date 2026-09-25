@@ -1,6 +1,6 @@
 """Render the 15s "order to outfit" ad.
 
-    python3 assemble.py                 # -> 404_culture_order_to_outfit[_animatic]_15s.mp4
+    STORY_PRODUCT=navy python3 assemble.py   # -> 404_culture_order_to_outfit_<product>[_animatic]_15s.mp4
     python3 assemble.py --frames 0,60   # stills for review -> build/still_XXX.png
 
 Filmed shots come from footage/<CODE>.(mp4|mov|m4v) when present and fall back
@@ -805,9 +805,9 @@ def main():
     if "--frames" in args:
         init_worker()
         for f in [int(v) for v in args[args.index("--frames") + 1].split(",")]:
-            Image.fromarray(render_frame(f)).save(os.path.join(C.BUILD, f"still_{f:03d}.png"))
+            Image.fromarray(render_frame(f)).save(os.path.join(C.BUILD, C.KEY, f"still_{f:03d}.png"))
         return
-    out = os.path.join(C.BUILD, "video_only.mp4")
+    out = os.path.join(C.BUILD, C.KEY, "video_only.mp4")
     cmd = [ffmpeg(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
            "-s", f"{W}x{H}", "-r", str(C.FPS), "-i", "-", "-c:v", "libx264", "-preset", "slow",
            "-crf", "16", "-pix_fmt", "yuv420p", out]
@@ -830,7 +830,8 @@ def mux(video):
         audio.main()
     films = [s["code"] for s in C.SHOTS if s["kind"] == "film"]
     missing = [c for c in films if c not in FOOTAGE]
-    name = "404_culture_order_to_outfit_15s.mp4" if not missing else "404_culture_order_to_outfit_animatic_15s.mp4"
+    stem = f"404_culture_order_to_outfit_{C.KEY}"
+    name = f"{stem}_15s.mp4" if not missing else f"{stem}_animatic_15s.mp4"
     final = os.path.join(C.HERE, name)
     subprocess.run([ffmpeg(), "-y", "-loglevel", "error", "-i", video, "-i", wav,
                     "-af", "loudnorm=I=-14:TP=-1.0:LRA=11", "-ar", "48000",

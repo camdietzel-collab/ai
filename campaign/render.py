@@ -386,11 +386,14 @@ def compose(t):
     return frame
 
 
+BLUR_SAMPLES = 11
+
+
 def render_frame(f):
     n = 1
     for a, b in BLUR:
         if a <= f < b:
-            n = 11
+            n = BLUR_SAMPLES
     if n == 1:
         acc = compose(float(f))
     else:

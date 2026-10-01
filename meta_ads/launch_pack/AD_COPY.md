@@ -78,3 +78,32 @@ CTA button for all: **Shop Now**. Link each ad to the product page, not the home
 - **Primary text:** Welcome to the League 🐯 Member perk: buy 1, get 1 15% off with code BO15OFF. Tees $39.99, thermal $52.99.
 - **Headline:** Claim Your Member Perk
 - **Description:** Code BO15OFF at checkout
+
+---
+
+# Pack 3 — more unique concepts (same offer, same setup)
+
+## 11 — Fit Facts label  (`11_fit_facts_label`)
+- **Primary text:** Read the label 🏷️ 100% vintage tiger print. 100% layered trim. 0% basic. 2 tees = $73.98 with code BO15OFF.
+- **Headline:** 0% Basic. 2 for $73.98.
+- **Description:** Code BO15OFF at checkout
+
+## 12 — Photo booth strip  (`12_photo_booth_strip`)
+- **Primary text:** red. red again. blue. both. 📸 Get both Tiger League Tees for $73.98 with code BO15OFF.
+- **Headline:** Take Both — $73.98
+- **Description:** 2nd tee 15% off
+
+## 13 — LEAGUE AIR boarding pass  (`13_league_air_boarding_pass`)
+- **Primary text:** Now boarding: flight TL04 from Basic to The League ✈️ Fare: 2 tees for $73.98 with promo code BO15OFF.
+- **Headline:** Now Boarding — 2 for $73.98
+- **Description:** Promo code BO15OFF
+
+## 14 — Weather forecast  (`14_weather_100_chance_of_fits`)
+- **Primary text:** Forecast: 100% chance of fits 🌤️ Red tee Monday, blue tee Tuesday, thermal Wednesday. Buy 1, get 1 15% off with BO15OFF.
+- **Headline:** 100% Chance of Fits
+- **Description:** Buy 1, get 1 15% off
+
+## 15 — Movie poster  (`15_tiger_league_movie_poster`)
+- **Primary text:** This fall, one tee isn't enough 🎬 TIGER LEAGUE — now showing. 2 tees for $73.98 with code BO15OFF.
+- **Headline:** Tiger League — Now Showing
+- **Description:** 2 for $73.98 with BO15OFF

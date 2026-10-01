@@ -107,3 +107,32 @@ CTA button for all: **Shop Now**. Link each ad to the product page, not the home
 - **Primary text:** This fall, one tee isn't enough 🎬 TIGER LEAGUE — now showing. 2 tees for $73.98 with code BO15OFF.
 - **Headline:** Tiger League — Now Showing
 - **Description:** 2 for $73.98 with BO15OFF
+
+---
+
+# Pack 4 — more unique concepts (same offer, same setup)
+
+## 16 — Parking ticket  (`16_parking_ticket`)
+- **Primary text:** You've been cited 🚨 Violation: wearing basic tees. Fine: 2 Tiger League Tees for $73.98. Pay with code BO15OFF.
+- **Headline:** Pay Your Fine — $73.98
+- **Description:** Code BO15OFF at checkout
+
+## 17 — Recipe card  (`17_recipe_card`)
+- **Primary text:** Recipe: The League Fit 🍳 1 red tiger tee + 1 blue tiger tee + code BO15OFF. Serves 2. Serve at $73.98.
+- **Headline:** Recipe for the Fit
+- **Description:** 2 tees for $73.98
+
+## 18 — WANTED poster  (`18_wanted_poster`)
+- **Primary text:** WANTED for being too clean 🤠 Reward: 15% off the 2nd Tiger League Tee with code BO15OFF.
+- **Headline:** Reward: 15% Off the 2nd
+- **Description:** 2 for $73.98 with BO15OFF
+
+## 19 — Test paper A+  (`19_test_paper_a_plus`)
+- **Primary text:** Pop quiz ✏️ Which tiger tee should you get? (c) both. 2 tees with BO15OFF = $73.98. A+.
+- **Headline:** The Answer Is (C) Both
+- **Description:** Code BO15OFF — 2nd tee 15% off
+
+## 20 — Cereal box  (`20_cereal_box`)
+- **Primary text:** Part of a complete fit 🥣 Tiger Tees: now 2 for $73.98. Prize inside: code BO15OFF.
+- **Headline:** Prize Inside: BO15OFF
+- **Description:** 2 tees for $73.98

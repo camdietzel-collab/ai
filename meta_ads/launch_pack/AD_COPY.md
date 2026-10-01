@@ -136,3 +136,32 @@ CTA button for all: **Shop Now**. Link each ad to the product page, not the home
 - **Primary text:** Part of a complete fit 🥣 Tiger Tees: now 2 for $73.98. Prize inside: code BO15OFF.
 - **Headline:** Prize Inside: BO15OFF
 - **Description:** 2 tees for $73.98
+
+---
+
+# Pack 5 — premium depth-type (same offer, same setup)
+
+## 21 — TIGER depth, red  (`21_tiger_depth_red`)
+- **Primary text:** The Tiger League Tee 🐯 Layered trim, vintage crest, boxy fit. 2 for $73.98 with code BO15OFF.
+- **Headline:** 2 Tiger Tees for $73.98
+- **Description:** Code BO15OFF — 2nd tee 15% off
+
+## 22 — LEAGUE depth, blue  (`22_league_depth_blue`)
+- **Primary text:** Sky blue, layered sleeve, vintage tiger. Pair it with the red one — 2 for $73.98 with BO15OFF.
+- **Headline:** The Blue One. 2 for $73.98.
+- **Description:** Code BO15OFF at checkout
+
+## 23 — Billboard at night  (`23_billboard_at_night`)
+- **Primary text:** The League is up in lights 🌃 2 Tiger League Tees for $73.98 with code BO15OFF.
+- **Headline:** 2 Tees for $73.98
+- **Description:** Buy 1, get 1 15% off
+
+## 24 — Red + Blue  (`24_red_plus_blue`)
+- **Primary text:** Red or blue? Get both. $73.98 for the pair with code BO15OFF.
+- **Headline:** Red + Blue = $73.98
+- **Description:** 2nd tee 15% off
+
+## 25 — Culture Thermal depth  (`25_culture_thermal_depth`)
+- **Primary text:** The Culture Thermal. Waffle knit, all-over graphic, sleeve print. $52.99 — add a tiger tee and the 2nd is 15% off with BO15OFF.
+- **Headline:** The Culture Thermal — $52.99
+- **Description:** Code BO15OFF

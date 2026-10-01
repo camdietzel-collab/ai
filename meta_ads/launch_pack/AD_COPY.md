@@ -49,3 +49,32 @@ CTA button for all: **Shop Now**. Link each ad to the product page, not the home
 2. **Budget:** split evenly for the first 3–4 days, then turn off anything with no purchases / the highest cost per purchase and let the rest run.
 3. **Audiences:** start broad (age 16–30, your country). Add a second ad set for site visitors + IG/FB engagers (last 30 days) running 02 and 04.
 4. **Before launch, check:** BO15OFF works in checkout exactly as the ads say (2nd item 15% off), and whether the thermal counts toward it. Ads 04 and 05 say it does — if not, tell me and I'll change them.
+
+---
+
+# Pack 2 — unique concepts (same offer, same setup)
+
+## 06 — Vending machine  (`06_vending_machine`)
+- **Primary text:** Fresh stock in the 404 machine 🐯 Tiger League Tees $39.99, Culture Thermal $52.99. Buy 1, get 1 15% off with code BO15OFF.
+- **Headline:** 2 Tees for $73.98
+- **Description:** Enter BO15OFF at checkout
+
+## 07 — RED vs BLUE fight poster  (`07_red_vs_blue_fight_poster`)
+- **Primary text:** Red or blue? Why choose. Both Tiger League Tees for $73.98 with code BO15OFF 🥊
+- **Headline:** Red vs Blue — Take Both
+- **Description:** 2nd tee 15% off
+
+## 08 — Scratch card  (`08_scratch_card`)
+- **Primary text:** Scratch it 👀 Your code: BO15OFF. Buy 1, get 1 15% off the Tiger League Tees + Culture Thermal.
+- **Headline:** Your Code: BO15OFF
+- **Description:** Buy 1, get 1 15% off
+
+## 09 — The 404 Times  (`09_the_404_times`)
+- **Primary text:** Breaking: Tiger League Tees now 2 for $73.98. Code BO15OFF takes 15% off the second one. More on the site.
+- **Headline:** Tiger Tees: 2 for $73.98
+- **Description:** Code BO15OFF
+
+## 10 — League member card  (`10_league_member_card`)
+- **Primary text:** Welcome to the League 🐯 Member perk: buy 1, get 1 15% off with code BO15OFF. Tees $39.99, thermal $52.99.
+- **Headline:** Claim Your Member Perk
+- **Description:** Code BO15OFF at checkout

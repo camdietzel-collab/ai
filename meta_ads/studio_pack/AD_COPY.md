@@ -50,3 +50,20 @@ Shoot at the same framing, then drop the photos into `make_studio.py`. The type 
 | C08 seated, white plinth | Tiger League Tee in red/gold. $39.99, or 2 for $73.98 with code BO15OFF. | 2 for $73.98 | Code BO15OFF |
 | C09 navy, red tee | Red against navy. Tiger League Tee — 2 for $73.98 with code BO15OFF. | Tiger League Tee | 2nd tee 15% off |
 | C10 red + blue split | Red or blue? Both. $73.98 for the pair with code BO15OFF. | Red + Blue — $73.98 | Code BO15OFF |
+
+---
+
+# Studio pack 3 — more engaging (same offer, same setup)
+
+| Ad | Primary text | Headline | Description |
+|---|---|---|---|
+| E01 red or blue? | Red or blue? Drop yours in the comments 👇 Or skip the choice: both for $73.98 with BO15OFF. | Red or Blue? | Both for $73.98 |
+| E02 TIGER behind | The Tiger League Tee. $39.99 — or 2 for $73.98 with code BO15OFF. | Tiger League Tee | Code BO15OFF |
+| E03 the League lineup | The League, assembled. Tiger League Tees — 2 for $73.98 with BO15OFF. | The League | 2nd tee 15% off |
+| E04 giant blue tee | The blue one is big energy. Sky blue Tiger League Tee — $39.99, 2 for $73.98 with BO15OFF. | The Blue One | Code BO15OFF |
+| E05 spotlight | All eyes on it. 2 Tiger League Tees for $73.98 with code BO15OFF. | 2 for $73.98 | Code BO15OFF |
+| E06 motion trail | Built to move in. Tiger League Tee — boxy, cropped, layered. 2 for $73.98 with BO15OFF. | Move In It | 2nd tee 15% off |
+| E07 pick your 2 | Pick your 2: red tee, blue tee or the Culture Thermal. 2nd one 15% off with BO15OFF. | Pick Your 2 | Code BO15OFF |
+| E08 giant 2 | 2 tees. $73.98. That's it. Code BO15OFF. | 2 for $73.98 | Was $79.98 |
+| E09 rate this fit | Rate this fit 1–10 👇 Tiger League Tee — 2 for $73.98 with BO15OFF. | Rate This Fit | Code BO15OFF |
+| E10 basic → league | Basic → League. Tiger League Tee, 2 for $73.98 with code BO15OFF. | From Basic to League | 2nd tee 15% off |
